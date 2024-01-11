@@ -1,0 +1,29 @@
+<script>
+    function calcularFibonacci() {
+      var fibonacci = [0, 1];
+      var pares = 0;
+      var impares = 0;
+
+      for (var i = 2; i < 10; i++) {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+
+        // Conteo de pares e impares
+        if (fibonacci[i] % 2 === 0) {
+          pares++;
+        } else {
+          impares++;
+        }
+      }
+
+      // Mostrar los números Fibonacci
+      document.write("<p>Números Fibonacci: " + fibonacci.join(', ') + "</p>");
+
+      // Mostrar el conteo de pares e impares
+      document.write("<p>Números pares: " + pares + "</p>");
+      document.write("<p>Números impares: " + impares + "</p>");
+    }
+
+    // Llamada a la función al cargar la página
+    calcularFibonacci();
+  </script>
+

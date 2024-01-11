@@ -1,0 +1,33 @@
+<script>
+    function convertirCalificacion() {
+      // Ingreso de nota por teclado
+      var nota = parseInt(prompt("Ingrese la nota (entre 1 y 20):"));
+
+      // Validar que la nota esté en el rango correcto
+      if (nota < 1 || nota > 20) {
+        document.write("<p>La nota ingresada no está en el rango válido.</p>");
+        return;
+      }
+
+      // Convertir la calificación según la tabla
+      var calificacion;
+
+      if (nota >= 19 && nota <= 20) {
+        calificacion = "SOBRESALIENTE";
+      } else if (nota >= 16 && nota <= 18) {
+        calificacion = "MUY BUENO";
+      } else if (nota >= 13 && nota <= 15) {
+        calificacion = "BUENO";
+      } else if (nota >= 10 && nota <= 12) {
+        calificacion = "REGULAR";
+      } else {
+        calificacion = "DEFICIENTE";
+      }
+
+      // Mostrar resultado
+      document.write("<p>La calificación es: " + calificacion + "</p>");
+    }
+
+    // Llamada a la función al cargar la página
+    convertirCalificacion();
+  </script>

@@ -1,0 +1,35 @@
+<script>
+    function esPrimo(numero) {
+      if (numero <= 1) return false;
+      for (var i = 2; i <= Math.sqrt(numero); i++) {
+        if (numero % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function obtenerPrimos(N) {
+      var numerosPrimos = [];
+      var sumaPrimos = 0;
+
+      for (var i = 2; numerosPrimos.length < N; i++) {
+        if (esPrimo(i)) {
+          numerosPrimos.push(i);
+          sumaPrimos += i;
+        }
+      }
+
+      var promedioPrimos = sumaPrimos / N;
+
+      // Mostrar los números primos
+      document.write("<p>Números primos: " + numerosPrimos.join(', ') + "</p>");
+
+      // Mostrar la suma y el promedio
+      document.write("<p>Suma de primos: " + sumaPrimos + "</p>");
+      document.write("<p>Promedio de primos: " + promedioPrimos + "</p>");
+    }
+
+    // Llamada a la función con N=10 (puedes cambiar N según tus necesidades)
+    obtenerPrimos(10);
+  </script>

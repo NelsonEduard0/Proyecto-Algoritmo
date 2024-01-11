@@ -1,0 +1,35 @@
+<script>
+    function esNumeroPerfecto(numero) {
+      var sumaDivisores = 1; // Inicializamos con 1 porque todo número es divisible por 1
+
+      // Sumar los divisores del número (hasta la mitad)
+      for (var i = 2; i <= numero / 2; i++) {
+        if (numero % i === 0) {
+          sumaDivisores += i;
+        }
+      }
+
+      // Verificar si el número es perfecto
+      return sumaDivisores === numero;
+    }
+
+    function obtenerPrimerosNPerfectos(n) {
+      var numerosPerfectos = [];
+      var numero = 2; // Comenzamos con el primer número primo
+
+      while (numerosPerfectos.length < n) {
+        if (esNumeroPerfecto(numero)) {
+          numerosPerfectos.push(numero);
+        }
+        numero++;
+      }
+
+      return numerosPerfectos;
+    }
+
+    // Obtener los primeros 3 números perfectos
+    var primerosNPerfectos = obtenerPrimerosNPerfectos(3);
+
+    // Mostrar resultados
+    document.write("<p>Los primeros 3 números perfectos son: " + primerosNPerfectos.join(', ') + "</p>");
+  </script>

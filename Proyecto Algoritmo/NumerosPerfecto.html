@@ -1,0 +1,26 @@
+<script>
+    function esNumeroPerfecto(numero) {
+      var sumaDivisores = 1; // Inicializamos con 1 porque todo número es divisible por 1
+
+      // Sumar los divisores del número (hasta la mitad)
+      for (var i = 2; i <= numero / 2; i++) {
+        if (numero % i === 0) {
+          sumaDivisores += i;
+        }
+      }
+
+      // Verificar si el número es perfecto
+      return sumaDivisores === numero;
+    }
+
+    // Ejemplos
+    var numero1 = 6;
+    var numero2 = 28;
+    var numero3 = 496;
+    var numero4 = 8_128;
+
+    document.write("<p>El número " + numero1 + " es perfecto: " + esNumeroPerfecto(numero1) + "</p>");
+    document.write("<p>El número " + numero2 + " es perfecto: " + esNumeroPerfecto(numero2) + "</p>");
+    document.write("<p>El número " + numero3 + " es perfecto: " + esNumeroPerfecto(numero3) + "</p>");
+    document.write("<p>El número " + numero4 + " es perfecto: " + esNumeroPerfecto(numero4) + "</p>");
+  </script>

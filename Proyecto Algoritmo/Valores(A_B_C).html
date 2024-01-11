@@ -1,0 +1,28 @@
+<script>
+    function encontrarMenor() {
+      // Ingreso de datos por teclado
+      var valorA = parseFloat(prompt("Ingrese el valor A:"));
+      var valorB = parseFloat(prompt("Ingrese el valor B:"));
+      var valorC = parseFloat(prompt("Ingrese el valor C:"));
+
+      // Determinar el menor de los tres valores
+      var menorValor;
+
+      if (valorA < valorB && valorA < valorC) {
+        menorValor = valorA;
+      } else if (valorB < valorA && valorB < valorC) {
+        menorValor = valorB;
+      } else {
+        menorValor = valorC;
+      }
+
+      // Mostrar resultados
+      document.write("<p>Valor A: " + valorA + "</p>");
+      document.write("<p>Valor B: " + valorB + "</p>");
+      document.write("<p>Valor C: " + valorC + "</p>");
+      document.write("<p>El menor valor es: " + menorValor + "</p>");
+    }
+
+    // Llamada a la función al cargar la página
+    encontrarMenor();
+  </script>

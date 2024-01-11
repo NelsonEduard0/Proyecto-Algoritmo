@@ -1,0 +1,30 @@
+<script>
+    function calcularProductoYPotencia() {
+      // Ingreso de datos por teclado
+      var valorA = parseInt(prompt("Ingrese el valor A (entero):"));
+      var valorB = parseInt(prompt("Ingrese el valor B (entero):"));
+
+      // Inicializar variables de resultado
+      var producto = 0;
+      var potencia = 1;
+
+      // Calcular producto mediante suma sucesiva
+      for (var i = 0; i < valorB; i++) {
+        producto += valorA;
+      }
+
+      // Calcular potencia mediante multiplicación sucesiva
+      for (var i = 0; i < valorB; i++) {
+        potencia *= valorA;
+      }
+
+      // Mostrar resultados
+      document.write("<p>Valor A: " + valorA + "</p>");
+      document.write("<p>Valor B: " + valorB + "</p>");
+      document.write("<p>Producto (A * B) mediante suma sucesiva: " + producto + "</p>");
+      document.write("<p>Potencia (A^B) mediante multiplicación sucesiva: " + potencia + "</p>");
+    }
+
+    // Llamada a la función al cargar la página
+    calcularProductoYPotencia();
+  </script>

@@ -1,0 +1,40 @@
+<script>
+    function esPrimo(numero) {
+      if (numero <= 1) return false;
+      for (var i = 2; i <= Math.sqrt(numero); i++) {
+        if (numero % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function obtener_Primeros_Primos() {
+      var primerosPrimos = [];
+      var contador1to10 = 0;
+      var contador15to25 = 0;
+
+      for (var i = 2; primerosPrimos.length < 10; i++) {
+        if (esPrimo(i)) {
+          primerosPrimos.push(i);
+
+          // Conteo en rangos
+          if (i >= 1 && i <= 10) {
+            contador1to10++;
+          } else if (i >= 15 && i <= 25) {
+            contador15to25++;
+          }
+        }
+      }
+
+      // Mostrar los 10 primeros números primos
+      document.write("<p>10 primeros números primos: " + primerosPrimos.join(', ') + "</p>");
+
+      // Mostrar el conteo en los rangos
+      document.write("<p>Contar primos entre [1 - 10]: " + primerosPrimos.slice(0, contador1to10).join(', ') + " => cantidad " + contador1to10 + "</p>");
+      document.write("<p>Contar primos entre [15 - 25]: " + primerosPrimos.slice(contador1to10, contador1to10 + contador15to25).join(', ') + " => cantidad " + contador15to25 + "</p>");
+    }
+
+    // Llamada a la función al cargar la página
+    obtenerPrimerosPrimos();
+  </script>

@@ -1,0 +1,23 @@
+ <script>
+    function multiplicacionPorSumasSucesivas() {
+      // Ingreso de datos por teclado
+      var valorA = parseInt(prompt("Ingrese el valor A:"));
+      var valorB = parseInt(prompt("Ingrese el valor B:"));
+
+      // Inicializar la variable de resultado
+      var producto = 0;
+
+      // Realizar la suma sucesiva
+      for (var i = 0; i < valorB; i++) {
+        producto += valorA;
+      }
+
+      // Mostrar resultados
+      document.write("<p>Valor A: " + valorA + "</p>");
+      document.write("<p>Valor B: " + valorB + "</p>");
+      document.write("<p>Multiplicación por Sumas Sucesivas: " + producto + "</p>");
+    }
+
+    // Llamada a la función al cargar la página
+    multiplicacionPorSumasSucesivas();
+  </script>

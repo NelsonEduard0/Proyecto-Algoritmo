@@ -1,0 +1,39 @@
+<script>
+    function esPrimo(numero) {
+      if (numero <= 1) return false;
+      for (var i = 2; i <= Math.sqrt(numero); i++) {
+        if (numero % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function obtenerPrimosFibonacci() {
+      var fibonacci = [1, 1];
+      var numerosPrimos = [];
+      var sumaPrimos = 0;
+
+      for (var i = 2; i < 10; i++) {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+
+        // Verificar si el número Fibonacci actual es primo
+        if (esPrimo(fibonacci[i])) {
+          numerosPrimos.push(fibonacci[i]);
+          sumaPrimos += fibonacci[i];
+        }
+      }
+
+      var promedioPrimos = numerosPrimos.length > 0 ? sumaPrimos / numerosPrimos.length : 0;
+
+      // Mostrar los números primos
+      document.write("<p>Números primos: " + numerosPrimos.join(', ') + "</p>");
+
+      // Mostrar la suma y el promedio
+      document.write("<p>Suma de primos: " + sumaPrimos + "</p>");
+      document.write("<p>Promedio de primos: " + promedioPrimos.toFixed(2) + "</p>");
+    }
+
+    // Llamada a la función al cargar la página
+    obtenerPrimosFibonacci();
+  </script>

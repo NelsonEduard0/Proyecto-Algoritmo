@@ -1,0 +1,24 @@
+<script>
+    function calcularSumaYPromedio() {
+      // Ingreso de datos por teclado
+      var nombreAlumno = prompt("Ingrese el nombre del alumno:");
+      var nota1 = parseFloat(prompt("Ingrese la nota 1:"));
+      var nota2 = parseFloat(prompt("Ingrese la nota 2:"));
+      var nota3 = parseFloat(prompt("Ingrese la nota 3:"));
+
+      // Cálculo de la suma y el promedio
+      var sumaNotas = nota1 + nota2 + nota3;
+      var promedioNotas = sumaNotas / 3;
+
+      // Mostrar resultados
+      document.write("<p>Nombre del Alumno: " + nombreAlumno + "</p>");
+      document.write("<p>Nota 1: " + nota1.toFixed(2) + "</p>");
+      document.write("<p>Nota 2: " + nota2.toFixed(2) + "</p>");
+      document.write("<p>Nota 3: " + nota3.toFixed(2) + "</p>");
+      document.write("<p>Suma de Notas: " + sumaNotas.toFixed(2) + "</p>");
+      document.write("<p>Promedio de Notas: " + promedioNotas.toFixed(2) + "</p>");
+    }
+
+    // Llamada a la función al cargar la página
+    calcularSumaYPromedio();
+  </script>

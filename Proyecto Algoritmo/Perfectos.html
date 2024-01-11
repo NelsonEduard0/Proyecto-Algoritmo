@@ -1,0 +1,27 @@
+ <script>
+    function esNumeroPerfecto(numero) {
+      var sumaDivisores = 1; // Inicializamos con 1 porque todo número es divisible por 1
+
+      // Sumar los divisores del número (hasta la mitad)
+      for (var i = 2; i <= numero / 2; i++) {
+        if (numero % i === 0) {
+          sumaDivisores += i;
+        }
+      }
+
+      // Verificar si el número es perfecto
+      return sumaDivisores === numero;
+    }
+
+    // Solicitar al usuario que ingrese un número
+    var numeroIngresado = parseInt(prompt("Ingrese un número para verificar si es perfecto:"));
+
+    // Verificar y mostrar el resultado
+    if (!isNaN(numeroIngresado)) {
+      var mensaje = esNumeroPerfecto(numeroIngresado) ? "¡Es un número perfecto!" : "No es un número perfecto.";
+      document.write("<p>" + mensaje + "</p>");
+    } else {
+      document.write("<p>Por favor, ingrese un número válido.</p>");
+    }
+  </script>
+
